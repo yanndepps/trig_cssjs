@@ -1,0 +1,68 @@
+@use '../fonts' as *;
+@use "sass:math";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 1rem;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  gap: 1rem;
+  place-content: center;
+}
+
+figure {
+  margin: 0 auto;
+}
+
+$angle1: 45deg;
+$adjacent1: 100%;
+$opposite1: math.tan($angle1) * $adjacent1;
+
+$angle2: 30deg;
+$adjacent2: 100%;
+$opposite2: math.tan($angle2) * $adjacent2;
+
+$angle3: 60deg;
+$adjacent3: 50%;
+$opposite3: math.tan($angle3) * $adjacent3;
+
+.triangle {
+  width: min(20rem, 90vw);
+  height: min(20rem, 90vw);
+  position: relative;
+  background: whitesmoke;
+  border: 1px solid lightgrey;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, deeppink, orange);
+    clip-path: polygon(0 100%, $adjacent1 (100% - $opposite1), $adjacent1 100%);
+  }
+
+  &:nth-child(2) {
+    &::after {
+      clip-path: polygon(0 100%, $adjacent2 (100% - $opposite2), $adjacent2 100%);
+    }
+  }
+
+  &:nth-child(3) {
+    &::after {
+      clip-path: polygon(0 100%, $adjacent3 (100% - $opposite3), $adjacent3 100%);
+    }
+  }
+}
+
+figcaption {
+  padding: 0.5rem;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+
+  span {
+    display: block;
+  }
+}
