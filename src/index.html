@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="./scss/main.scss" type="text/css" media="screen" />
+    <title>Trigonometry in CSS & JS</title>
+  </head>
+  <body>
+    <!-- controls -->
+    <div class="controls">
+      <div class="controls_group">
+        <label for="height">Adjust height</label>
+        <input id="height" type="range" min="100" max="300" step="5" data-slider />
+      </div>
+      <dl>
+        <div class="controls_group">
+          <dt>Angle:</dt>
+          <dd data-angle></dd>
+        </div>
+        <div class="controls_group">
+          <dt>Side Length:</dt>
+          <dd data-length></dd>
+        </div>
+      </dl>
+    </div>
+    <!-- shape -->
+    <div class="container">
+      <div class="shape">
+        <div class="shape_side"></div>
+        <div class="shape_side"></div>
+        <div class="shape_side"></div>
+        <div class="shape_side"></div>
+        <div class="shape_base"></div>
+      </div>
+    </div>
+    <!-- scripts -->
+    <script type="text/javascript" src="./js/pyramids.js"></script>
+  </body>
+</html>
