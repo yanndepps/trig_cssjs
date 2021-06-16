@@ -1,0 +1,54 @@
+@use '../fonts' as *;
+@use "sass:math";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 1rem;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  gap: 1rem;
+  place-content: center;
+}
+
+@mixin triangle($size) {
+  $angle: 60deg;
+  $adjacent: $size /2;
+  $startPos: (50% - $size /2);
+  $endPos: (50% + $size /2);
+  $opposite: math.tan($angle) * $adjacent;
+
+  clip-path: polygon(
+    $startPos $endpos,
+    ($startPos + $adjacent) (50% - $opposite /2),
+    $enPos $endPos
+  );
+}
+
+$hypotenuse: 60%; // side length
+$angle: 60deg;
+$adjacent: 60deg;
+$opposite: math.sin($angle) * $hypotenuse;
+
+.triangle {
+  width: min(20rem, 90vw);
+  height: min(20rem, 90vw);
+  position: relative;
+  background: whitesmoke;
+  border: 1px solid lightgrey;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, deeppink, orange);
+
+    clip-path: polygon(
+      0 $opposite,
+      // ($hypotenuse / 2) 0,
+      math.div($hypotenuse, 2) 0,
+      $hypotenuse $opposite
+    );
+  }
+}

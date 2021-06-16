@@ -1,0 +1,70 @@
+@use '../fonts' as *;
+@use "sass:math";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 1rem;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  gap: 1rem;
+  place-content: center;
+}
+
+figure {
+  margin: 0;
+}
+
+@mixin triangle($sideLength) {
+  $hypotenuse: $sideLength; // remaining to make calculations more logical
+
+  $angle: 60deg;
+  $opposite: math.sin($angle) * $hypotenuse;
+  $adjacent: math.div($hypotenuse, 2);
+  $startPos: (50% - $adjacent);
+  $startPosY: 50% - math.div($opposite, 2);
+  $endPos: (50% + $adjacent);
+  $endPosY: 50% + math.div($opposite, 2);
+
+  $clip: polygon(
+    $startPos $endPosY,
+    ($startPos + $adjacent) $startPosY,
+    $endPos $endPosY
+  );
+  -webkit-clip-path: $clip;
+  clip-path: $clip;
+}
+
+.triangle {
+  width: min(20rem, 90vw);
+  height: min(20rem, 90vw);
+  position: relative;
+  background: whitesmoke;
+  border: 1px solid lightgray;
+
+  &::after {
+    @include triangle(60%);
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, deeppink, orange);
+  }
+
+  &:nth-child(2) {
+    &::after {
+      @include triangle(40%);
+    }
+  }
+}
+
+figcaption {
+  padding: 0.5rem;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+
+  span {
+    display: block;
+  }
+}

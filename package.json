@@ -4,8 +4,8 @@
   "description": "trigonometry in css & js",
   "main": "src/index.html",
   "scripts": {
-    "dev": "parcel src/intro_01.html --no-source-maps",
-    "build": "parcel build src/intro_01.html --no-source-maps"
+    "dev": "parcel src/intro_04.html --no-source-maps",
+    "build": "parcel build src/intro_04.html --no-source-maps"
   },
   "keywords": [],
   "author": "",
