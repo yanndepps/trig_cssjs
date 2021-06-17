@@ -18,6 +18,7 @@ const createPoints = ( numberOfPoints = 300 ) => {
 
   for (let i = 1; i <= numberOfPoints; i++) {
     const radius = i * 2; // multiply the radius to get the spiral
+    // const radius = Math.pow(i, 1.618); // multiply the radius to get the spiral
     const x = xPos + Math.cos( i * angleStep ) * radius;
     const y = yPos + Math.sin( i * angleStep ) * radius;
 
