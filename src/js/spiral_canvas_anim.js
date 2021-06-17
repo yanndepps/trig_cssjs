@@ -18,7 +18,7 @@ ressizeCanvas();
 
 const plotPoints = (numberOfPoints, rotation) => {
   // 6 rotations of the spiral divided by number of points
-  const angleStep = (Math.PI * 10) / numberOfPoints;
+  const angleStep = ( Math.PI * 10 ) / numberOfPoints;
 
   // center the spiral
   const Xpos = canvas.width / 2;
