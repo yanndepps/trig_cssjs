@@ -1,0 +1,39 @@
+@use '../fonts' as *;
+@use "sass:math";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 1rem;
+  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+}
+
+.shape {
+  width: min(20rem, 90vmin);
+  height: min(20rem, 90vmin);
+  position: relative;
+  background: whitesmoke;
+  border: 1px solid lightgrey;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, deeppink, orange);
+    -webkit-clip-path: var(--clip);
+    clip-path: var(--clip);
+    transition: clip-path 200ms;
+  }
+}
+
+// controls
+
+.controls_group {
+  > * {
+    display: block;
+    width: 100%;
+  }
+}

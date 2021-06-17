@@ -4,8 +4,8 @@
   "description": "trigonometry in css & js",
   "main": "src/index.html",
   "scripts": {
-    "dev": "parcel src/pyramids_rnd.html --no-source-maps",
-    "build": "parcel build src/pyramids_rnd.html --no-source-maps"
+    "dev": "parcel src/polygon_star_int.html --no-source-maps",
+    "build": "parcel build src/polygon_star_int.html --no-source-maps"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="./scss/main.scss" type="text/css" media="screen" />
+    <title>Polygon Star</title>
+  </head>
+  <body>
+    <div class="controls">
+      <div class="controls_group">
+        <label for="points">Points: <span data-label="points"></span></label>
+        <input id="points" type="range" min="8" max="60" step="2" data-slider="points" />
+      </div>
+      <div class="controls_group">
+        <label for="rad">Inner radius: <span data-label="inner-radius"></span></label>
+        <input id="rad" type="range" min="20" max="120" step="5" data-slider="inner-radius" />
+      </div>
+    </div>
+    <div class="shape"></div>
+    <!-- scripts -->
+    <script type="text/javascript" src="./js/polygon_star_int.js"></script>
+  </body>
+</html>
