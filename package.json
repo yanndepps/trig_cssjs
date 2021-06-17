@@ -4,8 +4,8 @@
   "description": "trigonometry in css & js",
   "main": "src/index.html",
   "scripts": {
-    "dev": "parcel src/polygon_canvas.html --no-source-maps",
-    "build": "parcel build src/polygon_canvas.html --no-source-maps"
+    "dev": "parcel src/spiral_canvas.html --no-source-maps",
+    "build": "parcel build src/spiral_canvas.html --no-source-maps"
   },
   "keywords": [],
   "author": "",
