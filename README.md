@@ -6,4 +6,4 @@ An overview of trigonometry and some creative applications in CSS and JS, by [Mi
 
 | Example screenshots                          |
 |----------------------------------------------|
-| <img src="./examples/output_02.png" width="800" /> |
+| <img src="./examples/output_02.png" width="810" /> |
